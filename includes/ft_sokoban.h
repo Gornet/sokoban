@@ -1,4 +1,3 @@
-
 #ifndef		FT_SOKOBAN_H	
 # define	FT_SOKOBAN_H
 
@@ -28,8 +27,9 @@ typedef struct			plateau_s
 typedef struct			partie_s
 {
 	struct plateau_s	*p;
-	struct plateau_s	*tampon;
+	struct plateau_s	*tabini; //tableau qui ne bougera pas et servira au check , initialisé a la map de depart
 	int			score;
+	char			coup[1024]; //A initialisé avec des 0 partout , puis servira a enregistré chaque coup joué
 }				partie_t;
 
 
