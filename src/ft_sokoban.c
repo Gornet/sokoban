@@ -3,7 +3,7 @@
 
 void	ft_sokoban( char *location )
 {
-	char	**map;
+	char	*map;
 
 	map = ft_read_file(location);
 	if (map)

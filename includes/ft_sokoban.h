@@ -36,7 +36,7 @@ typedef struct			partie_s
 
 t_bool  ft_check_extension( char *extension );
 t_bool  ft_check_location( char *location );
-char    **ft_read_file( char *location );
+char    *ft_read_file( char *location );
 void    ft_sokoban( char *location );
 
 void	init_tableau(plateau_t *p);

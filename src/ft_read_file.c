@@ -3,25 +3,28 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-char	**ft_read_file( char *location )
+char	*ft_read_file( char *location )
 {
 	FILE		*file;
 	unsigned int	width;
 	unsigned int	height;
-	unsigned int	index_i;
-	unsigned int	index_j;
-	char		**map;
+	char		*map;
+	char		*buff;
 	
 	file = fopen( location, "r" );
 	if ( file )
 	{
 		fscanf(file, "%d %d", &width, &height);
 		printf("largeur : %d\nhauteur : %d\n", width, height);
-		if ((map = (char **) malloc(sizeof(char *) * sizeof(height + 1))))
-		{
-			index_i = 0;
-			while ( fgets(map[index_i++], width, file) );
-			fclose( file );
+		if ((map = (char *) malloc(sizeof(char) * sizeof(width))))
+		{			
+			buff = (char *) malloc(sizeof(char) * sizeof(width));
+			while ( fgets( buff, width, file ) )
+			{
+				printf("%s", buff);
+				strcat( map, buff );
+			}
+			printf("%s\n", map);
 			return ( map );
 		}
 	}
