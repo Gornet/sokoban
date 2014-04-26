@@ -17,13 +17,6 @@ int	ft_strlen( char *s1 )
 
 int	main( int ac, char **av )
 {
-	char		c;
-	partie_t	*partie;
-	int		largeur;
-	int		hauteur;
-	int		score;
-	static int	pos;
-
 	if ( ac )
 	{
 		if ( av[1] )
@@ -38,41 +31,8 @@ int	main( int ac, char **av )
 			else
 				printf("invalid location\n");
 		}
-		else if ( av[1] == NULL )
-		{
-			largeur = 10;
-			hauteur = 10;
-			score = 1;
-			alloc_memoire_partie( partie );
-			partie->score = score;
-			alloc_memoire_plateau( partie->p );
-			alloc_memoire_plateau( partie->tampon );
-			partie->p->largeur = largeur;
-			partie->p->hauteur = hauteur;
-			alloc_memoire_tableau( partie->p );
-			partie->tampon->largeur = partie->p->largeur;
-			partie->tampon->hauteur = partie->p->hauteur;
-			alloc_memoire_tableau( partie->tampon );
-			plateau( partie->p );
-			tableau_tampon( partie->p, partie->tampon );
-			afficher_tableau( partie->p );
-			while( partie->p->tab[A] != 'C' )
-			{	
-				printf("Rentrez i pour aller en haut , k pour aller en bas ,");
-				printf(" j pour aller a gauche , l pour aller a droite , ");
-				printf("r pour revenir au coup precedent\n");
-				scanf(" %c",&c);
-				printf("\n\n");
-				deplacement( c, partie->p, partie->tampon );
-				tableau_tampon( partie->p, partie->tampon );
-				system( "clear" );
-				printf( "COUP N'%d\n\n\n\n",partie->score );
-				afficher_tableau( partie->p );
-				partie->score++;
-			}
-			printf( "Vous avez reussi\n" );
-			endgame( partie );
-		}
+		else if ( !av[1] )
+			printf("unknown location\n");
 	}
 	return ( 0 );
 }

@@ -3,11 +3,14 @@
 
 void	ft_sokoban( char *location )
 {
-	char	**map;
+	char	*map;
 
 	map = ft_read_file(location);
 	if (map)
-		printf("Bon\n");
+	{
+		printf("%s", map );
+		
+	}
 	else
 		printf("error");
 }
