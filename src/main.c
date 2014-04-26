@@ -61,42 +61,9 @@ int	ft_strlen( char *s1 )
 	return ( i );
 }
 
-t_bool	ft_check_location( char *location )
-{
-	char	*adress;
-	char	*v_location;
-
-	adress = "Plateaux/";
-	v_location = location;
-	while ( *v_location++ == *adress++ )
-	{
-		if ( *v_location == '/' )
-			return ( TRUE );
-	}
-	return ( FALSE );
-}
-
 t_bool	ft_check_extension( char *extension )
 {
-	char	*ext;
-	int	j;
-	int	i;
-
-	i = 0;
-	ext = ".map";
-	while ( extension[i] )
-	{
-		if ( extension[i] == '.' )
-		{
-			j = 0;
-			while ( extension[i + j] == ext[j])
-				j++;
-			return ((j == ft_strlen( ext )) ? TRUE : FALSE);
-		}
-		i++;
-	}
-}
-
+	char	*e
 void	ft_sokoban( char *location )
 {
 	int	fd;
