@@ -3,12 +3,13 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-char	*ft_read_file( char *location )
+char	**ft_read_file( char *location )
 {
 	FILE		*file;
 	unsigned int	width;
 	unsigned int	height;
-	char		*map;
+	unsigned int	index_i;
+	char		**map;
 	char		*buff;
 	
 	file = fopen( location, "r" );
@@ -16,15 +17,16 @@ char	*ft_read_file( char *location )
 	{
 		fscanf(file, "%d %d", &width, &height);
 		printf("largeur : %d\nhauteur : %d\n", width, height);
-		if ((map = (char *) malloc(sizeof(char) * sizeof(width))))
-		{			
+		if ((map = (char **) malloc(sizeof(char*) * sizeof(height + 1))))
+		{		
+			index_i = 0;	
 			buff = (char *) malloc(sizeof(char) * sizeof(width));
 			while ( fgets( buff, width, file ) )
 			{
-				printf("%s", buff);
-				strcat( map, buff );
+				map[index_i] = strdup(buff);
+				printf("%s", map[index_i]);
+				index_i++;
 			}
-			printf("%s\n", map);
 			return ( map );
 		}
 	}
