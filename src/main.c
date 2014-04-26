@@ -1,56 +1,10 @@
-#include "../includes/main.h"
+#include "../includes/ft_sokoban.h"
 
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
 
 #define BUFFER_SIZE 1
-
-typedef enum
-{
-	FALSE = 0,
-	TRUE  = 1
-}			t_bool;
-
-void	ft_putchar( char c)
-{
-	write( 1, &c, 1 );
-}
-
-void            ft_putnbr(int n)
-{
-        if (n <= 9 && n >= 0)
-                ft_putchar(n + '0');
-        else if (n < 0)
-        {
-                ft_putchar('-');
-                ft_putnbr(-n);
-        }
-        else
-        {
-                ft_putnbr(n / 10);
-                ft_putnbr(n % 10);
-        }
-}
-
-void	ft_putstr( char *s )
-{
-	while ( *s )
-	{
-		ft_putchar( *s );
-		s++;
-	}
-}
-
-void	ft_putendl( char const *s )
-{
-        while ( *s )
-        {
-                ft_putchar( *s );
-                s++;
-        }
-        ft_putchar( '\n' );
-}
 
 int	ft_strlen( char *s1 )
 {
@@ -59,26 +13,6 @@ int	ft_strlen( char *s1 )
 	i = 0;
 	while ( s1[i++] );
 	return ( i );
-}
-
-t_bool	ft_check_extension( char *extension )
-{
-	char	*e
-void	ft_sokoban( char *location )
-{
-	int	fd;
-	char	*buff[BUFFER_SIZE + 1];
-	int	ret;
-
-	if ( fd = open( location, O_RDONLY ) > 0 )
-	{
-		while (( ret = read( fd, buff, BUFFER_SIZE ) ))
-		{
-			buff[ret] = '\0';
-			printf("%s", buff);
-		}
-	}
-	
 }
 
 int	main( int ac, char **av )
@@ -99,10 +33,10 @@ int	main( int ac, char **av )
 				if (ft_check_extension( av[1] ))
 					ft_sokoban( av[1] );
 				else
-					ft_putendl("invalid extension");
+					printf("invalid extension\n");
 			}
 			else
-				ft_putendl("invalid location");
+				printf("invalid location\n");
 		}
 		else if ( av[1] == NULL )
 		{

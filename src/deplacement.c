@@ -1,4 +1,4 @@
-#include "../includes/main.h"
+#include "../includes/ft_sokoban.h"
 
 int deplacement(char c , plateau_t *p ,plateau_t *tampon)
 {

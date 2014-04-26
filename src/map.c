@@ -1,4 +1,4 @@
-#include "../includes/main.h"
+#include "../includes/ft_sokoban.h"
 
 void afficher_tableau(plateau_t *p) /* Affichage dun tableau selon lignes et colonnes*/
 {

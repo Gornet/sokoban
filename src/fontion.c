@@ -1,4 +1,4 @@
-#include "../includes/main.h"
+#include "../includes/ft_sokoban.h"
 
 char contenu_case(plateau_t *p , int x , int y)
 {

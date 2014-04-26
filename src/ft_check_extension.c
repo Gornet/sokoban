@@ -1,4 +1,4 @@
-#include "../includes/sokoban.h"
+#include "../includes/ft_sokoban.h"
 
 t_bool	ft_check_extension( char *extension )
 {
