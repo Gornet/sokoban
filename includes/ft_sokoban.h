@@ -32,8 +32,6 @@ typedef struct			partie_s
 	int			score;
 }				partie_t;
 
-
-
 t_bool  ft_check_extension( char *extension );
 t_bool  ft_check_location( char *location );
 char    *ft_read_file( char *location );
@@ -46,7 +44,7 @@ void	placer_robot(plateau_t *p);
 void	placer_mur(plateau_t *p);
 void	placer_caisse(plateau_t *p);
 void	placer_arrive(plateau_t *p);
-int	deplacement(char c , plateau_t *p,plateau_t *tampon);
+int	deplacement(char c , plateau_t *p );
 void	detruire_plateau(plateau_t *p);
 void	creer_plateau(plateau_t *p);
 void	plateau(plateau_t *p);
