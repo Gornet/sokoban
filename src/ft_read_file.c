@@ -30,18 +30,15 @@ char	*ft_read_file( char *location )
 	if ( file )
 	{
 		fscanf(file, "%d %d", &width, &height);
-		printf("largeur : %d\nhauteur : %d", width, height);
+		printf("largeur : %d\nhauteur : %d\n", width, height);
 		if ((map = (char *) malloc(sizeof(char) * sizeof(height * width + 1))))
 		{		
 			buff = (char *) malloc(sizeof(char) * sizeof(width));
 			while ( fgets( buff, width, file ) )
 			{
-				
- 				/*
- 				buff = strchr(buff ,'\n');
-				if ( buff ) *buff = 0;
-				printf("%s", buff);
-				*/			
+				tmp = buff;
+ 				tmp = strchr(buff ,'\n');
+				if ( tmp ) *tmp = 0;		
 				map = ft_strjoin( map, buff );
 			}
 			return ( map );
