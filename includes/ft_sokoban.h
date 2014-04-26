@@ -1,6 +1,6 @@
 
-#ifndef	MAIN_H
-# define	MAIN_H
+#ifndef		FT_SOKOBAN_H	
+# define	FT_SOKOBAN_H
 
 /*Ajout des bibliotheques */
 # include <stdio.h>
@@ -38,6 +38,7 @@ t_bool  ft_check_extension( char *extension );
 t_bool  ft_check_location( char *location );
 char    *ft_read_file( char *location );
 void    ft_sokoban( char *location );
+int     ft_strlen( char *s1 );
 
 void	init_tableau(plateau_t *p);
 void	afficher_tableau(plateau_t *p);

@@ -1,20 +1,5 @@
 #include "../includes/ft_sokoban.h"
 
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-
-#define BUFFER_SIZE 1
-
-int	ft_strlen( char *s1 )
-{
-	int	i;
-
-	i = 0;
-	while ( s1[i++] );
-	return ( i );
-}
-
 int	main( int ac, char **av )
 {
 	if ( ac )

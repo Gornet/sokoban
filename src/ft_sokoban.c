@@ -8,7 +8,8 @@ void	ft_sokoban( char *location )
 	map = ft_read_file(location);
 	if (map)
 	{
-		printf("%s", map );
+		printf("map :\n%s\n", map );
+		
 		
 	}
 	else
